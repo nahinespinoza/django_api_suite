@@ -77,6 +77,8 @@ class DemoRestApiItem(APIView):
             if item['id'] == id:
                 if not item.get('is_active', True):
                     return Response({'error': 'Elemento ya inactivo.'}, status=status.HTTP_400_BAD_REQUEST)
+                
+                #Nunca borrar data de la base de datos, solo cambiar su estado a False    
                 item['is_active'] = False
                 return Response({'message': 'Elemento eliminado lógicamente.'}, status=status.HTTP_200_OK)
 

@@ -24,5 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("homepage/", include("homepage.urls")),
     path('demo/rest/api/', include('demo_rest_api.urls')),  # ← esta línea es clave
+    path("landing/api/",include('landing_api.urls')), #Path general del back que lleva a urls de la aplcacion landing_api
+    
 
 ]
